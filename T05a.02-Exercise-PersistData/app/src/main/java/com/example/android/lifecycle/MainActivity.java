@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String ON_RESTART = "onRestart";
     private static final String ON_DESTROY = "onDestroy";
     private static final String ON_SAVE_INSTANCE_STATE = "onSaveInstanceState";
+    private static final String LIFECYCLE_CALLBACKS_TEXT_KEY = "callbacks";
 
     /*
      * This TextView will contain a running log of every lifecycle callback method called from this
@@ -50,6 +51,10 @@ public class MainActivity extends AppCompatActivity {
         mLifecycleDisplay = (TextView) findViewById(R.id.tv_lifecycle_events_display);
 
         // TODO (6) If savedInstanceState is not null and contains LIFECYCLE_CALLBACKS_TEXT_KEY, set that text on our TextView
+        if(savedInstanceState!=null)
+        {
+            mLifecycleDisplay.setText(savedInstanceState.getString(LIFECYCLE_CALLBACKS_TEXT_KEY));
+        }
 
         logAndAppend(ON_CREATE);
     }
@@ -78,6 +83,15 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
 
         logAndAppend(ON_RESUME);
+    }
+
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        logAndAppend("onSaveInstanceState");
+        outState.putString(LIFECYCLE_CALLBACKS_TEXT_KEY,mLifecycleDisplay.getText().toString());
     }
 
     /**
