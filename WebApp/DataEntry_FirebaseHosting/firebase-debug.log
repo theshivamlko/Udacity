@@ -1,0 +1,114 @@
+[debug] [2018-04-16T20:55:21.258Z] ----------------------------------------------------------------------
+[debug] [2018-04-16T20:55:21.258Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Navoki\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-04-16T20:55:21.258Z] CLI Version:   3.18.4
+[debug] [2018-04-16T20:55:21.258Z] Platform:      win32
+[debug] [2018-04-16T20:55:21.258Z] Node Version:  v8.11.1
+[debug] [2018-04-16T20:55:21.258Z] Time:          Tue Apr 17 2018 02:25:21 GMT+0530 (India Standard Time)
+[debug] [2018-04-16T20:55:21.258Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-16T20:55:21.258Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-16T20:55:21.258Z] > authorizing via signed-in user
+[debug] [2018-04-16T20:55:21.258Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/explore-india-8dc5b  
+  
+ Tue Apr 17 2018 02:25:21 GMT+0530 (India Standard Time)
+[debug] [2018-04-16T20:55:22.880Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-16T20:55:22.880Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/explore-india-8dc5b/tokens  
+  
+ Tue Apr 17 2018 02:25:22 GMT+0530 (India Standard Time)
+[debug] [2018-04-16T20:55:23.981Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-16T20:55:23.981Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/explore-india-8dc5b  
+  
+ Tue Apr 17 2018 02:25:23 GMT+0530 (India Standard Time)
+[debug] [2018-04-16T20:55:25.703Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Navoki\Udacity\Udacity\WebApp\DataEntry_FirebaseHosting'...
+[info] 
+[debug] [2018-04-16T20:55:25.719Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/613478376218/clients/_:getWebAppConfig  
+  
+ Tue Apr 17 2018 02:25:25 GMT+0530 (India Standard Time)
+[debug] [2018-04-16T20:55:27.783Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
+[debug] [2018-04-17T08:06:13.850Z] ----------------------------------------------------------------------
+[debug] [2018-04-17T08:06:13.852Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Navoki\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-04-17T08:06:13.852Z] CLI Version:   3.18.4
+[debug] [2018-04-17T08:06:13.852Z] Platform:      win32
+[debug] [2018-04-17T08:06:13.853Z] Node Version:  v8.11.1
+[debug] [2018-04-17T08:06:13.853Z] Time:          Tue Apr 17 2018 13:36:13 GMT+0530 (India Standard Time)
+[debug] [2018-04-17T08:06:13.853Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-17T08:06:13.862Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-17T08:06:13.862Z] > authorizing via signed-in user
+[debug] [2018-04-17T08:06:13.864Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-04-17T08:06:13.864Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/0RlJUcScLvpRQnFTspUB-mfb2KQbcrZCMhcZY38AeWY',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Tue Apr 17 2018 13:36:13 GMT+0530 (India Standard Time)
+[debug] [2018-04-17T08:06:14.291Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-17T08:06:14.299Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/explore-india-8dc5b  
+  
+ Tue Apr 17 2018 13:36:14 GMT+0530 (India Standard Time)
+[debug] [2018-04-17T08:06:22.715Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-17T08:06:22.717Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/explore-india-8dc5b/tokens  
+  
+ Tue Apr 17 2018 13:36:22 GMT+0530 (India Standard Time)
+[debug] [2018-04-17T08:06:23.911Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-17T08:06:23.913Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/explore-india-8dc5b  
+  
+ Tue Apr 17 2018 13:36:23 GMT+0530 (India Standard Time)
+[debug] [2018-04-17T08:06:27.801Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Navoki\Udacity\Udacity\WebApp\DataEntry_FirebaseHosting'...
+[info] 
+[debug] [2018-04-17T08:06:27.806Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/613478376218/clients/_:getWebAppConfig  
+  
+ Tue Apr 17 2018 13:36:27 GMT+0530 (India Standard Time)
+[debug] [2018-04-17T08:06:28.722Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
+[debug] [2018-04-17T19:38:31.477Z] ----------------------------------------------------------------------
+[debug] [2018-04-17T19:38:31.480Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Navoki\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-04-17T19:38:31.480Z] CLI Version:   3.18.4
+[debug] [2018-04-17T19:38:31.480Z] Platform:      win32
+[debug] [2018-04-17T19:38:31.480Z] Node Version:  v8.11.1
+[debug] [2018-04-17T19:38:31.481Z] Time:          Wed Apr 18 2018 01:08:31 GMT+0530 (India Standard Time)
+[debug] [2018-04-17T19:38:31.481Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-17T19:38:31.491Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-17T19:38:31.491Z] > authorizing via signed-in user
+[debug] [2018-04-17T19:38:31.493Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-04-17T19:38:31.493Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/0RlJUcScLvpRQnFTspUB-mfb2KQbcrZCMhcZY38AeWY',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Wed Apr 18 2018 01:08:31 GMT+0530 (India Standard Time)
+[debug] [2018-04-17T19:38:31.961Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-17T19:38:31.970Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/explore-india-8dc5b  
+  
+ Wed Apr 18 2018 01:08:31 GMT+0530 (India Standard Time)
+[debug] [2018-04-17T19:38:33.491Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-17T19:38:33.492Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/explore-india-8dc5b/tokens  
+  
+ Wed Apr 18 2018 01:08:33 GMT+0530 (India Standard Time)
+[debug] [2018-04-17T19:38:34.509Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-17T19:38:34.510Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/explore-india-8dc5b  
+  
+ Wed Apr 18 2018 01:08:34 GMT+0530 (India Standard Time)
+[debug] [2018-04-17T19:38:36.212Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Navoki\Udacity\Udacity\WebApp\DataEntry_FirebaseHosting'...
+[info] 
+[debug] [2018-04-17T19:38:36.218Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/613478376218/clients/_:getWebAppConfig  
+  
+ Wed Apr 18 2018 01:08:36 GMT+0530 (India Standard Time)
+[debug] [2018-04-17T19:38:37.102Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+

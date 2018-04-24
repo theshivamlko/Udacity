@@ -1,0 +1,12 @@
+[21-Apr-2018 09:07:22 America/New_York] PHP Notice:  Array to string conversion in /home/wevandsc/link.wevands.com/ei/api/v1.0.0/states.php on line 23
+[21-Apr-2018 09:34:29 America/New_York] PHP Notice:  Array to string conversion in /home/wevandsc/link.wevands.com/ei/api/v1.0.0/states.php on line 13
+[21-Apr-2018 09:34:50 America/New_York] PHP Parse error:  syntax error, unexpected '$db' (T_VARIABLE), expecting ',' or ';' in /home/wevandsc/link.wevands.com/ei/api/v1.0.0/states.php on line 13
+[21-Apr-2018 09:42:12 America/New_York] PHP Parse error:  syntax error, unexpected '$db' (T_VARIABLE), expecting ',' or ';' in /home/wevandsc/link.wevands.com/ei/api/v1.0.0/states.php on line 13
+[21-Apr-2018 09:42:27 America/New_York] PHP Parse error:  syntax error, unexpected '$db' (T_VARIABLE), expecting ',' or ';' in /home/wevandsc/link.wevands.com/ei/api/v1.0.0/states.php on line 13
+[21-Apr-2018 09:43:27 America/New_York] PHP Parse error:  syntax error, unexpected '$db' (T_VARIABLE), expecting ',' or ';' in /home/wevandsc/link.wevands.com/ei/api/v1.0.0/states.php on line 13
+[21-Apr-2018 10:26:37 America/New_York] PHP Warning:  Missing argument 2 for DbHandler::getCities(), called in /home/wevandsc/link.wevands.com/ei/api/v1.0.0/cities.php on line 14 and defined in /home/wevandsc/link.wevands.com/ei/feed-data/include/DbHandler.php on line 50
+[21-Apr-2018 10:26:37 America/New_York] PHP Notice:  Undefined variable: debug in /home/wevandsc/link.wevands.com/ei/feed-data/include/DbHandler.php on line 53
+[21-Apr-2018 10:37:33 America/New_York] PHP Warning:  Missing argument 2 for DbHandler::getPlaces(), called in /home/wevandsc/link.wevands.com/ei/api/v1.0.0/places.php on line 14 and defined in /home/wevandsc/link.wevands.com/ei/feed-data/include/DbHandler.php on line 95
+[21-Apr-2018 10:37:33 America/New_York] PHP Notice:  Undefined variable: debug in /home/wevandsc/link.wevands.com/ei/feed-data/include/DbHandler.php on line 97
+[21-Apr-2018 10:37:34 America/New_York] PHP Warning:  Missing argument 2 for DbHandler::getPlaces(), called in /home/wevandsc/link.wevands.com/ei/api/v1.0.0/places.php on line 14 and defined in /home/wevandsc/link.wevands.com/ei/feed-data/include/DbHandler.php on line 95
+[21-Apr-2018 10:37:34 America/New_York] PHP Notice:  Undefined variable: debug in /home/wevandsc/link.wevands.com/ei/feed-data/include/DbHandler.php on line 97

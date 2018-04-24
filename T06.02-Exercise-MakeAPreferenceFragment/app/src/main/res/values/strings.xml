@@ -6,6 +6,10 @@
     <!-- - - - - - - - - - - - - - - -
           - Used by Preferences  -
           - - - - - - - - - - - - - - - -->
+    <string name="title">Title</string>
+    <string name="desc">Descripion</string>
+    <string name="off">Off</string>
+    <string name="on">ON</string>
 
     <!-- Value in SharedPreferences for red color option -->
     <string name="pref_color_red_value" translatable="false">red</string>

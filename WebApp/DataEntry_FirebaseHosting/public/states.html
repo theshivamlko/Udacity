@@ -1,0 +1,28 @@
+<html>
+
+
+<head>
+ <title>States</title> 
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+<script src="config.js"></script>
+
+</head>
+
+
+<body>
+
+<pre id="object"></pre>
+
+
+<script>
+  
+
+  
+  const preObj=document.getElementById('object');
+    var database = firebase.database().ref().child('object');
+
+  database.on('value',snap=> console.log((snap.val()));
+</script>
+
+</body>
+</html>

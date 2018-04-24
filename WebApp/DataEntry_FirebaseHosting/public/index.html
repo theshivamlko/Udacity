@@ -1,0 +1,245 @@
+<html>
+
+
+<head>Data entry
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-database.js"></script>
+
+
+  <script type="text/javascript">
+
+    var config = {
+      apiKey: "AIzaSyCYT4zXh6bCkEAB03R4zyKuvgHekVyFhDo",
+      authDomain: "explore-india-8dc5b.firebaseapp.com",
+      projectId: "explore-india-8dc5b",
+      databaseURL: "https://explore-india-8dc5b.firebaseio.com/",
+      storageBucket: "explore-india-8dc5b.appspot.com",
+
+    };
+    firebase.initializeApp(config);
+
+  </script>
+
+</head>
+
+
+<body onload="getStatesList()">
+
+  <form id="myform">
+    <!-- <input type="text" placeholder="Enter state name" id="state_name" name="state_name" required/> -->
+    
+    <select id="states" onchange="dropdownSelect(this);"></select>
+    <input type="text" placeholder="Enter state image url" id="state_image" required>
+
+    <button name="data" type="button" onclick="submitStateData()">Submit</button>
+  </form>
+
+
+  
+
+  <div id="data">
+
+  </div>
+
+  <script type="text/javascript">
+
+
+function loadStates()
+{
+var stateArrays=[{"code": "AN","name": "Andaman and Nicobar Islands"},
+{"code": "AP","name": "Andhra Pradesh"},
+{"code": "AR","name": "Arunachal Pradesh"},
+{"code": "AS","name": "Assam"},
+{"code": "BR","name": "Bihar"},
+{"code": "CG","name": "Chandigarh"},
+{"code": "CH","name": "Chhattisgarh"},
+{"code": "DH","name": "Dadra and Nagar Haveli"},
+{"code": "DD","name": "Daman and Diu"},
+{"code": "DL","name": "Delhi"},
+{"code": "GA","name": "Goa"},
+{"code": "GJ","name": "Gujarat"},
+{"code": "HR","name": "Haryana"},
+{"code": "HP","name": "Himachal Pradesh"},
+{"code": "JK","name": "Jammu and Kashmir"},
+{"code": "JH","name": "Jharkhand"},
+{"code": "KA","name": "Karnataka"},
+{"code": "KL","name": "Kerala"},
+{"code": "LD","name": "Lakshadweep"},
+{"code": "MP","name": "Madhya Pradesh"},
+{"code": "MH","name": "Maharashtra"},
+{"code": "MN","name": "Manipur"},
+{"code": "ML","name": "Meghalaya"},
+{"code": "MZ","name": "Mizoram"},
+{"code": "NL","name": "Nagaland"},
+{"code": "OR","name": "Odisha"},
+{"code": "PY","name": "Puducherry"},
+{"code": "PB","name": "Punjab"},
+{"code": "RJ","name": "Rajasthan"},
+{"code": "SK","name": "Sikkim"},
+{"code": "TN","name": "Tamil Nadu"},
+{"code": "TS","name": "Telangana"},
+{"code": "TR","name": "Tripura"},
+{"code": "UK","name": "Uttarakhand"},
+{"code": "UP","name": "Uttar Pradesh"},
+{"code": "WB","name": "West Bengal"}];
+
+
+
+
+    var select = document.getElementById("states");
+
+for (var i = 0; i < stateArrays.length; i++) {
+  var option = document.createElement('option');
+        option.text = option.value =stateArrays[i].name;
+        option.name =stateArrays[i].name;
+        select.add(option, 0);
+       var id=getRandom();
+        console.log("loop",id);
+      writeStateData1(stateArrays[i].name,"",id);
+
+}
+
+
+}
+
+
+function getRandom()
+{
+
+       var d = new Date();
+      var n = d.getTime();
+
+   //   console.log(n);
+      var c = Math.floor(Math.random() * ((9999-1111)+1) + 9999);
+    //  console.log(c);
+     // console.log(c + "---" + n);
+
+      return c+""+n;
+};
+
+
+    
+
+    var database = firebase.database();
+    var stateId=100;
+
+
+    function submitStateData() {
+    //  writeStateData(document.getElementById, imageUrl)
+    //  writeStateData(document.getElementById, imageUrl)
+    var img=document.getElementById("state_image").value;
+
+    if(!img || 0 === img.length)
+    alert('Enter pic link')
+    else
+    {
+    console.log("submit state",stateId);
+    writeStateData2(img,stateId);
+    }
+
+
+    
+
+    };
+
+   function writeStateData1(name,imageUrl,id) {
+   //   writeStateData2(document.getElementById("state_name").value.toUpperCase(),
+     
+      firebase.database().ref('state_city/' + id).update({
+        state_image: imageUrl,
+        state_name: name,
+      });
+    };
+
+    function writeStateData2(imageUrl,id) {
+
+      firebase.database().ref('state_city/' + id).update({
+         state_image: imageUrl,
+       });
+    }
+
+ /*   function writeStateData2(name, imageUrl,id) {
+
+      firebase.database().ref('state_city/' + id).update({
+        state_name: name,
+        state_image: imageUrl,
+      });
+    }
+*/
+
+  function getStatesList()
+  {
+    var state_city_ref = database.ref('state_city');
+  
+  //document.getElementById('data').innerHTML = "Loading List...";
+  var select2 = document.getElementById("states");
+ 
+  var option1 = document.createElement('option');
+      option1.text= 'Select state';
+       option1.value ='100';
+  select2.add(option1);
+
+
+  state_city_ref.orderByChild('state_name').on('value', function (snapshot) {
+
+  //  stateArray = "";
+
+   snapshot.forEach(function (childSnapshot) {
+      var childData = childSnapshot.val();
+
+      var option = document.createElement('option');
+      option.text= childData.state_name;
+       option.value =childSnapshot.key;
+       select2.add(option);
+      //stateArray = stateArray + '<li><p>' + childData.state_name +'</p> <img src="'+childData.state_image  + '" width="100" height="100"/> </li>';
+
+
+   //   console.log("==", childData.state_name);
+
+   //   document.getElementById('data').innerHTML = '<ul>' + stateArray + '</ul>'
+    });
+
+
+  });
+
+
+
+  }
+
+function dropdownSelect(selObj)
+{
+  
+  console.log("DROPDOWN",selObj.value);
+
+    stateId=selObj.value;
+  
+    database.ref('state_city/'+selObj.value).on('value', function (snapshot) {
+ 
+     // console.log("DROPDOWN",snapshot);
+
+  snapshot.forEach(function (childSnapshot) {
+    
+    console.log(childSnapshot.key, childSnapshot.val());  
+     //stateArray = stateArray + '<li><p>' + childData.state_name +'</p> <img src="'+childData.state_image  + '" width="100" height="100"/> </li>';
+
+
+     console.log("Select Drop Down Data", childData.state_name);
+
+  //   document.getElementById('data').innerHTML = '<ul>' + stateArray + '</ul>'
+   });
+
+
+ });
+
+
+}
+
+
+
+
+  </script>
+
+
+</body>
+
+</html>
