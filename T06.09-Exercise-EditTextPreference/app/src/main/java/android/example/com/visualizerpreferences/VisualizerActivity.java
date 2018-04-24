@@ -1,20 +1,5 @@
 package android.example.com.visualizerpreferences;
 
-/*
- * Copyright (C) 2016 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 
 import android.Manifest;
 import android.content.Intent;
@@ -48,21 +33,19 @@ public class VisualizerActivity extends AppCompatActivity implements SharedPrefe
         setupPermissions();
     }
 
-    // TODO (2) Modify the setupSharedPreferences method and onSharedPreferencesChanged method to
-    // properly update the minSizeScale, assuming a proper numerical value is saved in shared preferences
+
     private void setupSharedPreferences() {
-        // Get all of the values from shared preferences to set it up
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mVisualizerView.setShowBass(sharedPreferences.getBoolean(getString(R.string.pref_show_bass_key),
                 getResources().getBoolean(R.bool.pref_show_bass_default)));
         mVisualizerView.setShowMid(sharedPreferences.getBoolean(getString(R.string.pref_show_mid_range_key),
                 getResources().getBoolean(R.bool.pref_show_mid_range_default)));
         mVisualizerView.setShowTreble(sharedPreferences.getBoolean(getString(R.string.pref_show_treble_key),
                 getResources().getBoolean(R.bool.pref_show_treble_default)));
-        mVisualizerView.setMinSizeScale(1);
         loadColorFromPreferences(sharedPreferences);
-        // Register the listener
-        sharedPreferences.registerOnSharedPreferenceChangeListener(this);
+        loadSizeFromSharedPreferences(sharedPreferences);
+
+         sharedPreferences.registerOnSharedPreferenceChangeListener(this);
     }
 
     private void loadColorFromPreferences(SharedPreferences sharedPreferences) {
@@ -70,8 +53,13 @@ public class VisualizerActivity extends AppCompatActivity implements SharedPrefe
                 getString(R.string.pref_color_red_value)));
     }
 
-    // Updates the screen if the shared preferences change. This method is required when you make a
-    // class implement OnSharedPreferenceChangedListener
+    private void loadSizeFromSharedPreferences(SharedPreferences sharedPreferences) {
+        float minSize = Float.parseFloat(sharedPreferences.getString(getString(R.string.pref_size_key),
+                getString(R.string.pref_size_default)));
+        mVisualizerView.setMinSizeScale(minSize);
+    }
+
+
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         if (key.equals(getString(R.string.pref_show_bass_key))) {
@@ -82,28 +70,25 @@ public class VisualizerActivity extends AppCompatActivity implements SharedPrefe
             mVisualizerView.setShowTreble(sharedPreferences.getBoolean(key, getResources().getBoolean(R.bool.pref_show_treble_default)));
         } else if (key.equals(getString(R.string.pref_color_key))) {
             loadColorFromPreferences(sharedPreferences);
+        } else if (key.equals(getString(R.string.pref_size_key))) {
+            float minSize = Float.parseFloat(sharedPreferences.getString(getString(R.string.pref_size_key), "1.0"));
+            mVisualizerView.setMinSizeScale(minSize);
         }
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        // Unregister VisualizerActivity as an OnPreferenceChangedListener to avoid any memory leaks.
-        PreferenceManager.getDefaultSharedPreferences(this)
+         PreferenceManager.getDefaultSharedPreferences(this)
                 .unregisterOnSharedPreferenceChangeListener(this);
     }
 
-    /**
-     * Methods for setting up the menu
-     **/
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        /* Use AppCompatActivity's method getMenuInflater to get a handle on the menu inflater */
-        MenuInflater inflater = getMenuInflater();
-        /* Use the inflater's inflate method to inflate our visualizer_menu layout to this menu */
-        inflater.inflate(R.menu.visualizer_menu, menu);
-        /* Return true so that the visualizer_menu is displayed in the Toolbar */
-        return true;
+         MenuInflater inflater = getMenuInflater();
+         inflater.inflate(R.menu.visualizer_menu, menu);
+         return true;
     }
 
     @Override
@@ -117,14 +102,7 @@ public class VisualizerActivity extends AppCompatActivity implements SharedPrefe
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * Below this point is code you do not need to modify; it deals with permissions
-     * and starting/cleaning up the AudioInputReader
-     **/
 
-    /**
-     * onPause Cleanup audio stream
-     **/
     @Override
     protected void onPause() {
         super.onPause();
@@ -140,7 +118,7 @@ public class VisualizerActivity extends AppCompatActivity implements SharedPrefe
             mAudioInputReader.restart();
         }
     }
-    
+
     /**
      * App Permissions for Audio
      **/
