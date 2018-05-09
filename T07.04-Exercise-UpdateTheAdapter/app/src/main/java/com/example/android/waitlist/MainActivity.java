@@ -27,11 +27,9 @@ public class MainActivity extends AppCompatActivity {
 
         RecyclerView waitlistRecyclerView;
 
-        // Set local attributes to corresponding views
-        waitlistRecyclerView = (RecyclerView) this.findViewById(R.id.all_guests_list_view);
+         waitlistRecyclerView = (RecyclerView) this.findViewById(R.id.all_guests_list_view);
 
-        // Set layout for the RecyclerView, because it's a list we are using the linear layout
-        waitlistRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+         waitlistRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
 
         // Create a DB helper (this will create the DB if run for the first time)
@@ -47,9 +45,8 @@ public class MainActivity extends AppCompatActivity {
         // Get all guest info from the database and save in a cursor
         Cursor cursor = getAllGuests();
 
-        // TODO (10) Pass the entire cursor to the adapter rather than just the count
-        // Create an adapter for that cursor to display the data
-        mAdapter = new GuestListAdapter(this, cursor.getCount());
+         // Create an adapter for that cursor to display the data
+        mAdapter = new GuestListAdapter(this, cursor );
 
         // Link the adapter to the RecyclerView
         waitlistRecyclerView.setAdapter(mAdapter);

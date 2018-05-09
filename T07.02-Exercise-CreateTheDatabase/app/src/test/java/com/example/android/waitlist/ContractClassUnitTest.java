@@ -30,7 +30,7 @@ public class ContractClassUnitTest {
         Class[] innerClasses = WaitlistContract.class.getDeclaredClasses();
         assertEquals("Cannot find inner class to complete unit test", 1, innerClasses.length);
         Class entryClass = innerClasses[0];
-        assertTrue("Inner class should implement the BaseColumns interface", BaseColumns.class.isAssignableFrom(entryClass));
+        assertTrue("Inr class should implement the BaseColumns interface", BaseColumns.class.isAssignableFrom(entryClass));
         assertTrue("Inner class should be final", Modifier.isFinal(entryClass.getModifiers()));
         assertTrue("Inner class should be static", Modifier.isStatic(entryClass.getModifiers()));
     }
